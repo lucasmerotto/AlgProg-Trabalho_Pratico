@@ -1,0 +1,82 @@
+INF vs Zombies - Documentação do Jogo
+
+===========================
+1. Visão Geral do Jogo
+===========================
+
+"INF vs Zombies" é um jogo 2D inspirado em Plants vs Zombies, que foi desenvolvido em linguagem C utilizando a biblioteca Raylib.
+O objetivo do jogador é proteger o gramado da invasão de zumbis, posicionando estrategicamente plantas com diferentes funções
+no campo de batalha.
+
+As plantas disponíveis são:
+- Dispara-Ervilha: atira projéteis nos zumbis (custa 50 sóis), e por meio delas o usuário pode matar os zumbis;
+- Girassol: gera sóis ao longo do tempo (custa 25 sóis), e faz com que o usuário possa comprar novas plantas que disparam ervilha.  
+
+Os zumbis aparecem em hordas e avançam da direita para a esquerda. O jogador perde se algum zumbi ultrapassar o lado esquerdo da tela.
+Vence ao derrotar todas as hordas de zumbis.
+
+===========================
+2. Controles
+===========================
+
+- Clique Esquerdo: posiciona planta na célula clicada.
+- Tecla A: alterna entre as plantas disponíveis.
+- Tecla S: coleta todos os sóis visíveis.
+- Tecla E: volta ao menu principal.
+- ESC: fecha o jogo.
+
+===========================
+3. Como Compilar e Executar
+===========================
+
+Pré-requisitos:
+- Biblioteca Raylib instalada
+- Compilador C compatível (GCC, Clang, MinGW etc.)
+
+Para compilar no terminal com gcc (no Windows, Linux ou MacOS):
+
+    gcc main.c -o infzombies -lraylib -lGL -lm -lpthread -ldl -lrt -lX11
+
+Para compilar no Code::Blocks:
+- Crie um novo projeto Raylib
+- Substitua o conteúdo do `main.c` pelo código do jogo
+- Certifique-se de que as imagens estão na mesma pasta do executável gerado (`bin/Debug/` ou `bin/Release/`)
+
+===========================
+4. Organização dos Arquivos
+===========================
+
+O jogo carrega os seguintes arquivos de imagem, todos na mesma pasta do executável:
+- `menu_background.png`
+- `grass.png`
+- `peashooter.png`
+- `peashooter-proj.png`
+- `sunflower.png`
+- `sun.png`
+- `zombie.png`
+- `hud_sun.png`
+- `card_peashooter.png`
+- `card_sunflower.png`
+
+Além disso, é necessário um arquivo de texto chamado `config.txt` com 3 números inteiros representando o número de zumbis em cada horda.
+Exemplo do conteúdo de `config.txt`:
+
+    5 8 12
+
+===========================
+5. Tela Inicial e Gameplay
+===========================
+
+Ao iniciar o jogo, o menu principal é exibido com 3 opções:
+- Jogar
+- Leaderboard (em desenvolvimento)
+- Sair
+
+Durante o jogo, o jogador pode posicionar plantas e gerenciar recursos para impedir que os zumbis atravessem o campo.
+
+===========================
+6. Créditos
+===========================
+
+Trabalho desenvolvido para a disciplina INF01202 - Algoritmos e Programação (2025/1),
+Universidade Federal do Rio Grande do Sul (UFRGS).
